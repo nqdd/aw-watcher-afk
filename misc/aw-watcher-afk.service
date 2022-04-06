@@ -1,5 +1,5 @@
 [Unit]
-Description=AFK watcher for ActivityWatch
+Description=AFK watcher for KomuTracker
 Documentation=
 After=aw-server.service
 
