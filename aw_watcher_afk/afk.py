@@ -43,7 +43,7 @@ class AFKWatcher:
 
         self.client = ActivityWatchClient("aw-watcher-afk", testing=testing)
         self.bucketname = "{}_{}".format(
-            self.client.client_name, os.getlogin()#self.client.client_hostname
+            self.client.client_name, self.client.client_hostname
         )
 
     def ping(self, afk: bool, timestamp: datetime, duration: float = 0):
@@ -72,7 +72,7 @@ class AFKWatcher:
                 if system in ["Darwin", "Linux"] and os.getppid() == 1:
                     # TODO: This won't work with PyInstaller which starts a bootloader process which will become the parent.
                     #       There is a solution however.
-                    #       See: https://github.com/ActivityWatch/aw-qt/issues/19#issuecomment-316741125
+                    #       See: https://github.com/nccasia/aw-qt/issues/19#issuecomment-316741125
                     logger.info("afkwatcher stopped because parent process died")
                     break
 
