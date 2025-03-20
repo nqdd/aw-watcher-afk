@@ -1,7 +1,7 @@
 .PHONY: build test package clean
 
 build:
-	poetry install
+	poetry install -vvv
 
 test:
 	poetry run aw-watcher-afk --help  # Ensures that it at least starts
